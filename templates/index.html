@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Meow</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="overlay">
+            <div class="form-container">
+                {% if message %}
+                    <p class="message">{{ message | safe }}</p>
+                {% endif %}
+                <form action="/submit" method="POST">
+                    <h1>Welcome to Meow!</h1>
+                    <h2>Find the Purrfect Match!</h2>
+                    <p>Our office is very busy. To reserve your spot please fill out the form.</p>
+                    <h2>Gender</h2>
+                    <div class="form-container gender">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="male" value="male">
+                        <label for="female">Female</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="other">Other</label>
+                        <input type="radio" name="gender" id="other" value="other">
+                    </div>
+                    <div class="form-container">
+                        <label for="firstname"></label>
+                        <input type="text" name="firstname" placeholder="First Name"><br>
+                        <label for="lastname"></label>
+                        <input type="text" name="lastname" placeholder="Last Name"><br>
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="Email"><br>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>
